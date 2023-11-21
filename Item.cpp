@@ -4,12 +4,12 @@
 
 using namespace std;
 
-Item :: Item(char* name) {
+Item :: Item(char* title) {//contructor for items
   name = new char[80];
-  strcpy(name, name);
+  strcpy(name, title);
 
 }
 
-char* Item :: getName() {
-  return Item;
+char* Item :: getName() {//gettter for names
+  return name;
 }

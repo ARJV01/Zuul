@@ -1,5 +1,5 @@
-#ifndef ALPHA
-#define ALPHA
+#ifndef BRAVO
+#define BRAVO
 
 #include<iostream>
 #include<cstring>
@@ -8,11 +8,11 @@ using namespace std;
 
 class Item {
 public:
-  Item(char* name);
-  char* getName();
+  Item(char* name);//contructor for item
+  char* getName();//getter for name
 protected:
   char* name;
   
 };
 
-#endif // ALPHA
+#endif // BRAVO

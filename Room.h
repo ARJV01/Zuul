@@ -8,8 +8,8 @@ using namespace std;
 
 class Room {
 public:
-  Room(char* name);
-  char* getName();
+  Room(char* name);//room constructor
+  char* getName();//getter for names
 
 protected:
   char* title;
