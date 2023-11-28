@@ -6,8 +6,8 @@
 #include<map>
 
 //Arjun Vinsel
-//11/20/23
-//This program is a text based game. Players con move pick up or drop items. To win they must reach pizzia land.
+//11/28/23
+//This program is a text based game. Players con move pick up or drop items. To win they must reach pizza land.
 
 using namespace std;
 
@@ -52,6 +52,7 @@ int main() {//main class
   char move[80];
   char input[80];
   vector<Item*> inventory;
+  cout << "Reach Pizza Land" << endl;
   while(stillPlaying == true) {
   cout << "you are in: " << location -> getName() << endl;
   for(auto i = itemMap.begin(); i != itemMap.end(); i++) {
@@ -82,13 +83,16 @@ int main() {//main class
 	else {
 	  cout << "enter a valid move" << endl;
 	}
-  
+	if(strcmp(location -> getName(), "pizzaland") == 0) {
+	  cout << "you have reached Pizza land!" << endl;
+	  stillPlaying = false;
+	}
     
   }
   return 0;
 }
 
-void createRoom(vector<Room*> &roomLs,map<Room*, Exit> &gameMap,map<Item*, Room*> &itemMap) {// creats the rooms and items in them
+void createRoom(vector<Room*> &roomLs,map<Room*, Exit> &gameMap,map<Item*, Room*> &itemMap) {// creates the rooms and items in them
  char* title1;
   title1 = new char [80];
   strcpy(title1, "pentagon");
@@ -416,12 +420,13 @@ void pick(vector<Item*> &inventory, vector<Room*> roomLs, map<Room*, Exit> gameM
          for(auto i = itemMap.begin(); i != itemMap.end(); i++) {
            if(strcmp(input, (i -> first) -> getName())  == 0 && strcmp((location -> getName()) , ((i->second) -> getName())) == 0) {
                inventory.push_back(i -> first);
-	       //second.clear();
+	       i -> second = NULL;
+	       
 	       break;
              }
          }
 	}
-  
+    
 
 
 
