@@ -258,8 +258,8 @@ void createRoom(vector<Room*> &roomLs,map<Room*, Exit> &gameMap,map<Item*, Room*
    exit9.east = false;
    exit9.south = true;
    exit9.west = false;
-   exit9.southRoom = room9;
-   exit9.eastRoom = room12;
+   exit9.southRoom = room12;
+   exit9.northRoom = room3;
    gameMap.insert({room9,exit9});
 
    Exit exit10;
@@ -317,7 +317,7 @@ void createRoom(vector<Room*> &roomLs,map<Room*, Exit> &gameMap,map<Item*, Room*
    exit15.south = false;
    exit15.west = true;
    exit15.northRoom = room9;
-   exit15.eastRoom = room13;
+   exit15.westRoom = room14;
    gameMap.insert({room15,exit15});
 
 
